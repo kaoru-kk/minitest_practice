@@ -1,0 +1,6 @@
+<%= @user.name %> のブログ一覧</br>
+<% @user.blogs.each do |blog| %>
+    title: <%= blog.title %>
+    <%= link_to "本文を読む", blog_path(blog) %></br> 
+<% end %>
+<%= link_to '新しく記事を書く', new_blog_url(id: @user.id) %>
